@@ -4,8 +4,6 @@
 name: .NET
 
 on:
-  push:
-    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
@@ -21,8 +19,8 @@ jobs:
       with:
         dotnet-version: 8.0.x
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore server/chatbot.api/chatbot.api.sln
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build server/chatbot.api/chatbot.api.sln --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test server/chatbot.api/chatbot.api.sln --no-build --verbosity normal
