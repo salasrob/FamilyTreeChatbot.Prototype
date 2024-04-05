@@ -1,0 +1,30 @@
+name: Build Next.js Project
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20.5'  # Specify Node.js version 20.5
+
+      - name: Install Dependencies
+        run: npm install
+        working-directory: server\chatbot.ui  # Specify the subdirectory
+
+      - name: Build Next.js Project
+        run: npm run build
+        working-directory: server\chatbot.ui  # Specify the subdirectory
