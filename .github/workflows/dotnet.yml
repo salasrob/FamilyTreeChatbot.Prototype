@@ -20,10 +20,9 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
-        path: server/chatbot.api
     - name: Restore dependencies
-      run: dotnet restore chatbot.api.sln
+      run: dotnet restore server/chatbot.api/chatbot.api.sln
     - name: Build
-      run: dotnet build chatbot.api.sln --no-restore
+      run: dotnet build server/chatbot.api/chatbot.api.sln --no-restore
     - name: Test
-      run: dotnet test chatbot.api.sln --no-build --verbosity normal
+      run: dotnet test server/chatbot.api/chatbot.api.sln --no-build --verbosity normal
