@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\chatbot.data\chatbot.data.csproj" />
+    <ProjectReference Include="..\chatbot.entities\chatbot.entities.csproj" />
   </ItemGroup>
 
 </Project>
